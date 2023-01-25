@@ -19,8 +19,10 @@ ui <- shinyUI(fluidPage(
        navbarPage("Supreme Darts League",
                   tabPanel(value = "League_standings", title = "Standings", icon = icon("table"), 
                            DT::dataTableOutput("standings")),
-                  tabPanel(Value = "Fixtures", title = "Fixtures",
-                           DT::dataTableOutput("fixtures")))
+                  tabPanel(Value = "Upcoming Fixtures", title = "Upcoming Fixtures", icon = icon("people-group"),
+                           DT::dataTableOutput("Upcoming_Fixtures")),
+                  tabPanel(Value = "Results", title = "Results", icon = icon("trophy"),
+                           DT::dataTableOutput("match_results")))
 
        )
   

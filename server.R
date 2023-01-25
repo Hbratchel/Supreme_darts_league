@@ -32,6 +32,9 @@ standings_data <- fn_calculate_leg_Scores(match_data = fixture_data)
 
 standings_data <- fn_clean_headers(standings_data)
 
+upcoming_fixture_data <- fn_create_fixtures_table(fixture_data)
+
+match_results <- fn_create_results_table(fixture_data)
 
 
 ###
@@ -42,7 +45,16 @@ data <-standings_data
     data
   })
   
-  output$fixtures = DT::renderDataTable({
-    fixture_data
+  output$Upcoming_Fixtures = DT::renderDataTable({
+    upcoming_fixture_data
   })
+  
+  
+  output$match_results = DT::renderDataTable({
+    match_results
+  })
+  
+  
+  
+  
 }
